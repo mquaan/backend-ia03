@@ -34,7 +34,7 @@ export class AuthService {
 
         const isMatch = await this.comparePasswords(password, user.password); // Check if passwords match
         if (!isMatch) {
-            throw new UnauthorizedException('Login failed. Please verify your details!'); // If password does not match
+            throw new UnauthorizedException('Incorrect email/username or password.'); // If password does not match
         }
 
         const payload = { sub: user._id, email: user.email }; // Create JWT payload
